@@ -462,6 +462,29 @@ body {
 .header {
   position: relative;
   background: hsl(300, 60%, 20.59%);
+  transition: 0.5s ease;
+}
+.header.fixed {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  transition: 0.5s ease;
+  background: hsl(0, 0%, 100%);
+}
+.header.fixed .header__wrapper .branding .header__text h4 {
+  color: hsl(0, 0%, 0%);
+}
+.header.fixed .header__wrapper .branding img {
+  content: url("../img/rsz_slack_rgb.png");
+}
+.header.fixed .header__wrapper .branding .header__nav__text__links ul li a img {
+  content: url("../img/vector2.svg");
+}
+.header.fixed .header__nav a {
+  color: hsl(0, 0%, 0%);
+}
+.header.fixed .header__nav .toggle__menu span {
+  background-color: hsl(0, 0%, 0%);
 }
 .header__wrapper {
   display: flex;
@@ -476,7 +499,6 @@ body {
   -o-object-fit: center center;
      object-fit: center center;
   display: block;
-  content: url(../img/vector6.svg);
 }
 .header__text {
   display: none;
@@ -605,6 +627,11 @@ body {
   display: none;
 }
 @media screen and (min-width: 1085px) {
+  .header.fixed {
+    margin: 1rem 20rem;
+    width: 80%;
+    border-radius: 20rem;
+  }
   .header__wrapper .branding {
     display: flex;
     align-items: center;
@@ -618,6 +645,9 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 0 1.5rem;
+  }
+  .header__text h4:not(:first-child):hover {
+    text-decoration: underline;
   }
   .header__nav {
     display: flex;

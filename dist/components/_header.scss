@@ -1,6 +1,48 @@
 .header{
     position: relative;
     background: $clr-violet;
+    transition: .5s ease;
+    &.fixed{
+        position: fixed;
+        width: 100%;
+        z-index: 999;
+        transition: .5s ease;
+        background: $clr-light;
+        .header__wrapper{
+            .branding{
+                .header__text{
+                    h4{
+                        color: $clr-dark;
+                    }
+                }
+                img{
+                    content: url("../img/rsz_slack_rgb.png");
+                }
+                .header__nav__text__links{
+                    ul{
+                        li{
+                            a{
+                                img{
+                                    content: url("../img/vector2.svg");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .header__nav{
+            a{
+                color: $clr-dark;
+            }
+            .toggle__menu{
+                span{
+                    background-color: $clr-dark;
+                }
+            }
+        }
+
+    }
     &__wrapper{
         display: flex;
         align-items: center;
@@ -8,7 +50,6 @@
         .branding{
             img{
                 @include imgFit(13rem,100%);
-                content: url(../img/vector6.svg);
             }
         }
     }
@@ -135,6 +176,11 @@
         }
     }
     @include mediaQuery($break-lg){
+        &.fixed{
+            margin: 1rem 20rem;
+            width: 80%;
+            border-radius: 20rem;
+        }
         &__wrapper{
             .branding{
                 display: flex;
@@ -149,6 +195,12 @@
                 display: flex;
                 justify-content: space-between;
                 padding: 0 1.5rem;
+                
+                &:not(:first-child){
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
             }
         }
         &__nav{

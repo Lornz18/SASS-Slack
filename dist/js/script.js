@@ -45,7 +45,7 @@ links.forEach((baba) => {
 const gutter = document.querySelector(".header");
 window.addEventListener("scroll", () => {
   console.log(window.pageYOffset);
-  if (window.pageYOffset >= 100) {
+  if (window.pageYOffset >= 300) {
     gutter.classList.add("fixed");
   } else {
     gutter.classList.remove("fixed");
