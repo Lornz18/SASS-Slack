@@ -1,0 +1,83 @@
+.btn{
+    display: inline-block;
+    border: 1px solid $clr-violet;
+    border-radius: .5rem;
+    padding: 2rem;
+    &.white{
+        background: $clr-light;
+        color: $clr-violet;
+        transition: .5s ease;
+        &:hover{
+            box-shadow: inset 0 0 0 1px $clr-violet;
+            transition: .5s ease;
+        }
+    }
+    &.violet{
+        background: $clr-violet;
+        color: $clr-light
+    }
+}
+
+$colors:(
+    "dark": $clr-dark, 
+    "light": $clr-light,
+    "violet": $clr-violet
+
+
+);
+
+$displays:flex,block,none,unset,inline,inline-flex,inline-block;
+
+$alignments:(
+    "center": center,
+    "between": space-between
+);
+
+@each $key, $val in $alignments{
+    .text{
+        &--#{$key}{
+            text-align: $val;
+        }
+    }
+    .justify{
+        &--#{$key}{
+            justify-content: $val;
+        }
+    }
+}
+
+@each $display in $displays{
+    .d--#{$display}{
+        display: $display;
+    }
+}
+
+@each $key, $val in $colors{
+    .text{
+        &--#{$key}{
+            color: $val;
+        }
+    }
+    .bg{
+        &--#{$key}{
+            background: $val;
+        }
+    }
+}
+
+
+
+@for $i from 0 through 20{
+    .mr--#{$i}{
+        margin-right: $i + rem;
+    }
+    .ml--#{$i}{
+        margin-left: $i + rem;
+    }
+    .mt--#{$i}{
+        margin-top: $i + rem;
+    }
+    .mb--#{$i}{
+        margin-bottom: $i + rem;
+    }
+}

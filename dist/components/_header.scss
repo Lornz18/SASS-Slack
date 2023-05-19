@@ -1,0 +1,217 @@
+.header{
+    position: relative;
+    background: $clr-violet;
+    &__wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .branding{
+            img{
+                @include imgFit(13rem,100%);
+                content: url(../img/vector6.svg);
+            }
+        }
+    }
+    &__text{
+        display: none;
+    }
+    &__nav{
+        display: flex;
+        a{
+            color: $clr-light;
+            margin-right: 2rem;
+        }
+        .toggle__menu{
+            z-index: 10;
+            span{
+                display: block;
+                height: .3rem;
+                width: 3rem;
+                background: $clr-light;
+                border-radius: 5rem;
+                z-index: 10;
+                &:nth-child(2){
+                    margin: .3rem 0;
+                }
+            }
+            &.open{
+                span{
+                    background: $clr-dark;
+                    &:first-child{
+                        transform: translate(0, 12px) rotate(45deg);
+                        transition: .5s ease;
+                    }
+                    &:nth-child(2){
+                        opacity: 0;
+                        transition: .5s ease;
+                    }
+                    &:last-child{
+                        transform: translate(0, 1px) rotate(-45deg);
+                        transition: .5s ease;
+                    }
+                }
+            }
+        }
+        &__content{
+            z-index: 1;
+            position: absolute;
+            background: $clr-light;
+            right: -100rem;
+            top: 0;
+            width: 100%;
+            padding: 1rem 3rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: .5s ease;
+            &.open{
+                right: 0;
+                transition: .5s ease;
+            }
+            &__top{
+                @include centerAll;
+                img{
+                    @include imgFit(13rem,100%);
+                }
+                a{
+                    color: $clr-dark;
+                }
+            }
+            &__text{
+                padding: 5rem 0;
+                a{
+                    color: $clr-dark;
+                    h4{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        font-size: 2rem;
+                        padding: 2rem 0;
+                    }
+                }
+                &__links{
+                    ul{
+                        max-height: 0rem;
+                        padding: 0 2rem;
+                        overflow: hidden;
+                        li{
+                            margin: 2rem 0;
+                            a{
+                                font-size: 2rem;
+                                &:hover{
+                                    color: blue;
+                                }
+                            }
+                        }
+                        &.open{
+                            max-height: 30rem;
+                            overflow: unset;
+                        }
+                    }
+                }
+            }
+            &__actions{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                padding: 3rem 0;
+                background: $clr-light;
+                box-shadow: 0 -1px 3px gray;
+                a{
+                    margin: 1rem auto;
+                    width: 90%;
+                    text-align: center;
+                    &:hover{
+                        box-shadow: unset !important;
+                    }
+                }
+            }
+        }
+        &__actions{
+            display: none;
+        }
+    }
+    @include mediaQuery($break-lg){
+        &__wrapper{
+            .branding{
+                display: flex;
+                align-items: center;
+            }
+        }
+        &__text{
+            display: flex;
+            color: $clr-light;
+            margin-left: 2rem;
+            h4{
+                display: flex;
+                justify-content: space-between;
+                padding: 0 1.5rem;
+            }
+        }
+        &__nav{
+            display: flex;
+            align-items: center;
+            &__content{
+                display: none;
+            }
+            &__text{
+                &__links{
+                    position: relative;
+                    ul{
+                        position: absolute;
+                        top:2rem;
+                        left: 0;
+                        background: $clr-light;
+                        border-radius: .5rem;
+                        width:18rem;
+                        opacity: 0;
+                        transition: .5s ease;
+                        li{
+                            padding: 1rem;
+                            a{
+                                display: flex;
+                                color: $clr-dark;
+                                img{
+                                    width: 2rem !important;
+                                    margin-right: 1rem;
+                                }
+                            }
+                            &:last-child{
+                                border-top: 1px solid $clr-dark;
+                            }
+                        }
+                    }
+                    &:first-child{
+                        &:hover{
+                            ul{
+                                top:3rem;
+                                transition: .5s ease;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            &__actions{
+                display: flex;
+                align-items: center;
+                a{
+                    &:first-child{
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                    &:nth-child(2){
+                        border: 1px solid $clr-light;
+                    }
+                }
+            }
+            .toggle__menu{
+                display: none;
+            }
+        }
+    }
+}
