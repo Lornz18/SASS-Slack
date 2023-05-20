@@ -1,7 +1,6 @@
 .header{
     position: relative;
     background: $clr-violet;
-    transition: .5s ease;
     &.fixed{
         position: fixed;
         width: 100%;
