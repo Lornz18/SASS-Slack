@@ -7,6 +7,7 @@
     <title>Slack - Home</title>
     <link rel="stylesheet" href="./scss/main.css">
     <script src="https://kit.fontawesome.com/c0a9717a9e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
 </head>
 <body>
     <header class="header">
@@ -190,7 +191,77 @@
         </div>
     </section>
 
+    <section class="card">
+        <div class="container">
+            <h3>Take a deeper dive into a new way to work</h3>
+            <div class="card__wrapper">
+                <div class="card__content">
+                    <div class="card__content__item">
+                        <img src="./img/promo-state-of-work.jpg" alt="">
+                        <p>Report</p>
+                        <h3>The Sate of Work 2023</h3>
+                        <a href="">READ MORE</a>
+                    </div>
+                </div>
+                <div class="card__content">
+                    <div class="card__content__item">
+                        <img src="./img/promo-state-of-work.jpg" alt="">
+                        <p>Report</p>
+                        <h3>The Sate of Work 2023</h3>
+                        <a href="">READ MORE</a>
+                    </div>
+                </div>
+                <div class="card__content">
+                    <div class="card__content__item">
+                        <img src="./img/promo-state-of-work.jpg" alt="">
+                        <p>Report</p>
+                        <h3>The Sate of Work 2023</h3>
+                        <a href="">READ MORE</a>
+                    </div>
+                </div>
+                <div class="card__content">
+                    <div class="card__content__item">
+                        <img src="./img/promo-state-of-work.jpg" alt="">
+                        <p>Report</p>
+                        <h3>The Sate of Work 2023</h3>
+                        <a href="">READ MORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <script src="./js/script.js"></script>
+    <section class="free">
+        <div class="container">
+            <div class="free__wrapper">
+                <div class="free__text">
+                    <h1>See all you can accomplish with Slack</h1>
+                </div>
+                <div class="free__actions">
+                    <a href="" class="btn white">TRY FOR FREE</a>
+                    <a href="" class="btn violet">TALK TO SALES</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+
+      <script type="module">
+        var slider = tns({
+          container: '.card__wrapper',
+          items: 1,
+          slideBy: 'page',
+          nav: true,
+          controls:false,
+          navPosition: "bottom",
+          responsive:{
+            1085:{
+                items: 4,
+            }
+          }
+        });
+    </script>
 </body>
 </html>
