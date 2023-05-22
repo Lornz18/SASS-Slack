@@ -179,6 +179,13 @@
             margin: 1rem 20rem;
             width: 80%;
             border-radius: 20rem;
+            .header__nav__actions{
+                a{
+                    &:nth-child(2){
+                        color: $clr-light;
+                    }
+                }
+            }
         }
         &__wrapper{
             .branding{
@@ -236,11 +243,11 @@
                         }
                     }
                     &:first-child{
-                        &:hover{
-                            ul{
-                                top:3rem;
-                                transition: .5s ease;
-                                opacity: 1;
+                        h4{
+                            &:hover + ul{
+                                    top:3rem;
+                                    transition: .5s ease;
+                                    opacity: 1;
                             }
                         }
                     }

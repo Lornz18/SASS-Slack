@@ -284,6 +284,10 @@
                     width: 85rem;
                     border-radius: 0 40rem 40rem 0;
                 }
+                span{
+                    top: 20rem;
+                    left: 40rem;
+                }
             }
             &__item{
                 &1{
@@ -342,9 +346,9 @@
             transition: .5s ease;
             h3{
                 text-align: left;
+                min-height: 15rem;
             }
             a{
-                margin-top: 10rem;
                 display: flex;
                 align-items: baseline;
                 justify-content: space-between;

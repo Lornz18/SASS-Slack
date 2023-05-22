@@ -688,6 +688,9 @@ body {
     width: 80%;
     border-radius: 20rem;
   }
+  .header.fixed .header__nav__actions a:nth-child(2) {
+    color: hsl(0, 0%, 100%);
+  }
   .header__wrapper .branding {
     display: flex;
     align-items: center;
@@ -739,7 +742,7 @@ body {
   .header__nav__text__links ul li:last-child {
     border-top: 1px solid hsl(0, 0%, 0%);
   }
-  .header__nav__text__links:first-child:hover ul {
+  .header__nav__text__links:first-child h4:hover + ul {
     top: 3rem;
     transition: 0.5s ease;
     opacity: 1;
@@ -1087,6 +1090,10 @@ body {
     width: 85rem;
     border-radius: 0 40rem 40rem 0;
   }
+  .team__content__vid span {
+    top: 20rem;
+    left: 40rem;
+  }
   .team__content__item1 {
     display: flex;
     align-items: center;
@@ -1143,9 +1150,9 @@ body {
 }
 .card__content__item h3 {
   text-align: left;
+  min-height: 15rem;
 }
 .card__content__item a {
-  margin-top: 10rem;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
