@@ -1,0 +1,56 @@
+.links{
+    padding-top: 5rem ;
+    &__wrapper{
+        border-bottom: 1px solid gray;
+    }
+    &__img{
+        img{
+            width: 20rem;;
+        }
+    }
+    &__item{
+        margin: 4rem 0;
+        h4{
+            display: flex;
+            justify-content: space-between;
+        }
+        ul{
+            max-height: 0;
+            overflow: hidden;
+            transition: .5s ease;
+            li{
+                margin-bottom: 2rem;
+                a{
+                    color: gray;
+                    &:hover{
+                        color: $clr-blue;
+                    }
+                }
+            }
+            &.open{
+                padding: 1rem;
+                max-height: 30rem;
+                transition: .5s ease;
+            }
+        }
+    }
+    @include mediaQuery($break-lg){
+        &__wrapper{
+            @include grid(6,2rem);
+        }
+        &__item{
+            margin: 0;
+            h4{
+                i{
+                    display: none;
+                }
+            }
+            ul{
+                max-height: 30rem;
+                li{
+                    margin: 2rem 0;
+                }
+            }
+        }
+    }
+}

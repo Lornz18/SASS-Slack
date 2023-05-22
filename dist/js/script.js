@@ -31,8 +31,17 @@ function removeActiveContent() {
   });
 }
 
-// LINKS
-const links = document.querySelectorAll(".header__nav__content__text__links a");
+//  head LINKS
+const header_links = document.querySelectorAll(".header__nav__content__text__links a");
+header_links.forEach((baba) => {
+  baba.addEventListener("click", () => {
+    baba.nextElementSibling.classList.toggle("open");
+    baba.querySelector("i").classList.toggle("open");
+  });
+});
+
+//  LINKS
+const links = document.querySelectorAll(".links__item h4");
 links.forEach((baba) => {
   baba.addEventListener("click", () => {
     baba.nextElementSibling.classList.toggle("open");
@@ -42,12 +51,12 @@ links.forEach((baba) => {
 
 
 // scroll
-const gutter = document.querySelector(".header");
+const head = document.querySelector(".header");
 window.addEventListener("scroll", () => {
   console.log(window.pageYOffset);
   if (window.pageYOffset >= 300) {
-    gutter.classList.add("fixed");
+    head.classList.add("fixed");
   } else {
-    gutter.classList.remove("fixed");
+    head.classList.remove("fixed");
   }
 });
